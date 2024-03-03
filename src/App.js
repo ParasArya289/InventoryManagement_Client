@@ -4,6 +4,7 @@ import "./styles.css";
 import { fetchInventory, fetchSales } from "./actions";
 import { Inventory } from "./Components/inventory";
 import { Sales } from "./Components/sales";
+import { Report } from "./Components/Report";
 
 export default function App() {
   const [selection, setSelection] = useState("inventory");
@@ -16,7 +17,10 @@ export default function App() {
     <div className="App">
       <button onClick={() => setSelection("inventory")}>Inventory</button>
       <button onClick={() => setSelection("sales")}>Sales</button>
-      {selection === "inventory" ? <Inventory /> : <Sales />}
+      <button onClick={() => setSelection("report")}>Report</button>
+      {selection === "inventory" && <Inventory />}
+      {selection === "sales" && <Sales />}
+      {selection === "report" && <Report />}
     </div>
   );
 }

@@ -20,20 +20,17 @@ export const Sales = () => {
   return (
     <div>
       <h1>Sales</h1>
+      <input type="date" />
       <form ref={formRef} onSubmit={submitHandler}>
-        <input
-          name="description"
-          type="string"
-          placeholder="Description"
-          required
-        />
-        <input name="amount" type="number" placeholder="Amount" required />
+        <input name="name" type="string" placeholder="Name" required />
+        <input name="price" type="number" placeholder="Price" required />
+        <input name="quantity" type="number" placeholder="Quantity" required />
         <button type="submit">Add sale</button>
       </form>
       <ul>
         {sales.map((item) => (
           <li key={item._id} style={{ padding: "20px" }}>
-            Desc: {item.description}, Amount: {item.amount}
+            Name: {item.name}, Quantity: {item.quantity}, Price:{item.price}, Revenue: {+item.price * +item.quantity}
           </li>
         ))}
       </ul>
