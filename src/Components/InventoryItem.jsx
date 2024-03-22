@@ -17,6 +17,7 @@ export const InventoryItem = ({ item }) => {
     }
     dispatch(updateInventoryItem(data,item._id));
     formRef.current.reset();
+    setIsEdit(false);
   }
   return (
     <li key={item._id} style={{ padding: "20px" }}>
